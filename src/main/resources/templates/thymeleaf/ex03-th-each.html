@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf</title>
+</head>
+<body>
+<div>
+    <h2>th:each 반복문 예제</h2>
+    <table border="1">
+        <thead>
+        <tr>
+            <td>순번</td>
+            <td>상품명</td>
+            <td>상세설명</td>
+            <td>가격</td>
+            <td>수량</td>
+            <td>등록일</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="itemDto, status: ${itemDtoList}">
+<!--            <td th:text="${status}"></td>-->
+            <td th:text="${status.index}"></td>
+            <td th:text="${itemDto.name}"></td>
+            <td th:text="${itemDto.detailDesc}"></td>
+            <td th:text="${itemDto.price}"></td>
+            <td th:text="${itemDto.cnt}"></td>
+            <td th:text="${itemDto.regTime}"></td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+
+</body>
+</html>

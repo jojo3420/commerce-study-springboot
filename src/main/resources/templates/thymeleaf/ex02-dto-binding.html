@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf</title>
+</head>
+<body>
+<div>
+    <h2>상품 데이터 출력 예제</h2>
+    <div>
+        상품명: <span th:text="${itemDto.name}"></span>
+    </div>
+    <div>
+        상세 설명: <span th:text="${itemDto.detailDesc}"></span>
+    </div>
+    <div>
+        등록일: <span th:text="${itemDto.regTime}"></span>
+    </div>
+    <div>
+        가격: <span th:text="${itemDto.price}"></span>
+    </div>
+    <div>
+        수량: <span th:text="${itemDto.cnt}"></span>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>th:if, th:unless 예제</h2>
+<table border="1">
+    <thead>
+    <tr>
+        <td>순번</td>
+        <td>상품명</td>
+        <td>상세설명</td>
+        <td>가격</td>
+        <td>수량</td>
+        <td>등록일</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="itemDto, status: ${itemDtoList}">
+        <td th:switch="${status.index % 2 == 0}">
+            <span th:text="${status.even}"></span>
+            <span th:case="true">짝수</span>
+            <span th:case="false">홀수</span>
+        </td>
+        <td th:text="${itemDto.name}"></td>
+        <td th:text="${itemDto.detailDesc}"></td>
+        <td th:text="${itemDto.price}"></td>
+        <td th:text="${itemDto.cnt}"></td>
+        <td th:text="${itemDto.regTime}"></td>
+    </tr>
+    </tbody>
+
+    <div th:switch="${itemDtoList.size() > 0}">
+        <div th:case="true" >사이즈는 0보다 큽니다.</div>
+        <div th:case="false">사이즈는 0보다 작습니다.</div>
+
+    </div>
+
+
+</body>
+</html>
